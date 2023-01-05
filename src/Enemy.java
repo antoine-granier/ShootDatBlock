@@ -2,9 +2,12 @@ import com.jogamp.opengl.GL2;
 
 public class Enemy {
 
-    private static final float SPEED = 0.3f;
-    private final float x;
+    private static final float SPEED = 0.05f;
+    private float x;
     private final float y;
+    private static final float RIGHT_LIMIT = 10.0f;
+    private static final float LEFT_LIMIT = -10.0f;
+    private boolean right = true;
 
     public Enemy(float x, float y) {
         this.x = x;
@@ -47,6 +50,21 @@ public class Enemy {
         gl.glVertex3f(0.4f, 0.4f, -0.4f);
         gl.glVertex3f(0.4f, -0.4f, -0.4f);
         gl.glEnd();
+    }
+
+    public void move() {
+        if(right && x < RIGHT_LIMIT) {
+            x += SPEED;
+        }
+        if(right && x >= RIGHT_LIMIT) {
+            right = false;
+        }
+        if(!right && x > LEFT_LIMIT) {
+            x -= SPEED;
+        }
+        if(!right && x <= LEFT_LIMIT) {
+            right = true;
+        }
     }
 
     public float getX() {

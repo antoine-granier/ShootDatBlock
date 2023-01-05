@@ -48,7 +48,7 @@ public class Game extends GLCanvas implements GLEventListener, KeyListener {
     public void init(GLAutoDrawable glAutoDrawable) {
         GL2 gl = glAutoDrawable.getGL().getGL2();
         gl.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-        gl.glShadeModel(GL2.GL_SMOOTH);
+        //gl.glShadeModel(GL2.GL_SMOOTH);
         gl.glClearDepth(1.0f);
         gl.glEnable(GL2.GL_DEPTH_TEST);
         gl.glDepthFunc(GL2.GL_LEQUAL);
@@ -97,6 +97,7 @@ public class Game extends GLCanvas implements GLEventListener, KeyListener {
         for (Enemy enemy : enemies) {
             gl.glPushMatrix();
             enemy.draw(gl, textureEnemy);
+            enemy.move();
             gl.glPopMatrix();
         }
 
