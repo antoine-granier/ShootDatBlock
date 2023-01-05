@@ -65,7 +65,7 @@ public class Game extends GLCanvas implements GLEventListener, KeyListener {
             Texture t1 = TextureIO.newTexture(im1, true);
             textureSpaceship = t1.getTextureObject(gl);
 
-            File im2 = new File("textures/enemy.jpg");
+            File im2 = new File("textures/enemy.png");
             Texture t2 = TextureIO.newTexture(im2, true);
             textureEnemy = t2.getTextureObject(gl);
 

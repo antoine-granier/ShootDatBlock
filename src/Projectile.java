@@ -15,7 +15,7 @@ public class Projectile {
         gl.glTranslatef(x, y, -15.0f);
         gl.glScalef(1f, 1f, 1f);
         gl.glDisable(GL2.GL_TEXTURE_2D);
-        gl.glColor3f(0, 0, 1);
+        gl.glColor3f(0, 1, 0);
 
         gl.glBegin(GL2.GL_QUADS);
 
